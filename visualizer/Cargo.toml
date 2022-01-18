@@ -1,0 +1,9 @@
+[package]
+name = "visualizer"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+tokio = { version = "1.15.0", features = ["macros"] }
+lambda_http = { git = "https://github.com/awslabs/aws-lambda-rust-runtime/", branch = "master"}
+base64 = "0.13.0"

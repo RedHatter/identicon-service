@@ -1,0 +1,7 @@
+{
+  "devDependencies": {
+    "serverless": "^2.71.0",
+    "serverless-rust": "github:softprops/serverless-rust"
+  },
+  "name": "identicon-service"
+}

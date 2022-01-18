@@ -1,0 +1,45 @@
+service: identicon-service
+provider:
+  name: aws
+  runtime: rust
+  memorySize: 128
+  lambdaHashingVersion: 20201221
+# you can overwrite defaults here
+#  stage: dev
+#  region: us-east-1
+
+# you can define service wide environment variables here
+#  environment:
+#    variable1: value1
+
+package:
+  individually: true
+
+plugins:
+  - serverless-rust
+
+custom:
+  rust:
+    dockerless: true
+
+functions:
+  visulizer:
+    handler: visualizer
+    events:
+      - http:
+          path: /{hash}
+          method: get
+
+  hasher:
+    handler: hasher
+    events:
+      - http:
+          path: /
+          method: get
+          request:
+            parameters:
+              querystrings:
+                data: true
+      - http:
+          path: /
+          method: post

@@ -1,0 +1,11 @@
+[package]
+name = "hasher"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+tokio = { version = "1.15.0", features = ["macros"] }
+lambda_http = { git = "https://github.com/awslabs/aws-lambda-rust-runtime/", branch = "master"}
+tiny-keccak = { version = "2.0.2", features = ["k12"] }
+base64 = "0.13.0"
+serde = "1.0.133"
